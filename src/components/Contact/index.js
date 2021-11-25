@@ -25,19 +25,32 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact">
+    <section id="contact" className="relative">
       <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
+        <div className="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-2 flex items-end justify-start relative">
+          <iframe
+            width="100%"
+            height="100%"
+            title="map"
+            className="inset-0"
+            frameBorder={0}
+            marginHeight={0}
+            marginWidth={0}
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJgTwKgJcpQg0RaSKMYcHeNsQ&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+          />
+        </div>
         <form
           netlify
           name="contact"
           onSubmit={handleSubmit}
-          className="lg:w-1/3 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0"
+          className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-2 mt-2 md:mt-0"
         >
           <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font">
             Hire Me
           </h2>
           <p className="leading-relaxed mb-5">
-            If you would like to contact me, please leave your details below and I will get back to you as soon as possible.
+            If you would like to contact me, please leave your details below and
+            I will get back to you as soon as possible.
           </p>
           <div className="relative mb-4">
             <label htmlFor="name" className="leading-7 text-sm text-gray-400">
@@ -86,22 +99,21 @@ export default function Contact() {
         </form>
       </div>
       <div className="w-full bg-gray-800 rounded-lg overflow-hidden sm:mr-10 p-4 flex rounded shadow-md">
-          <div className="bg-gray-800 relative flex flex-wrap py-6 ">
-        
-            <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
-              <h2 className="title-font font-semibold text-white tracking-widest text-xs">
-                EMAIL
-              </h2>
-              <span className="text-indigo-400 leading-relaxed">
-                marranz.agueda@gmail.com
-              </span>
-              <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
-                PHONE
-              </h2>
-              <p className="leading-relaxed">+34 678 44 36 84</p>
-            </div>
+        <div className="bg-gray-800 relative flex flex-wrap py-6 ">
+          <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
+            <h2 className="title-font font-semibold text-white tracking-widest text-xs">
+              EMAIL
+            </h2>
+            <span className="text-indigo-400 leading-relaxed">
+              marranz.agueda@gmail.com
+            </span>
+            <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
+              PHONE
+            </h2>
+            <p className="leading-relaxed">+34 678 44 36 84</p>
           </div>
         </div>
+      </div>
     </section>
   );
 }
