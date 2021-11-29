@@ -1,6 +1,6 @@
 import React from "react";
 import Portal from "../Portal";
-
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 export default function Contact() {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -8,11 +8,11 @@ export default function Contact() {
   const [showModal, setShowModal] = React.useState(false);
 
   const closeModal = () => {
-    setName('')
-    setEmail('')
-    setMessage('')
+    setName("");
+    setEmail("");
+    setMessage("");
     setShowModal(false);
-  }
+  };
 
   function encode(data) {
     return Object.keys(data)
@@ -35,8 +35,8 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative">
-      <div className="container px-5 py-10 mx-auto flex sm:flex-nowrap flex-wrap">
-        <div className="lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 p-2 flex items-end justify-start relative">
+      <div className="container px-5 py-5 mx-auto flex flex-wrap sm:flex-nowrap">
+        <div className="w-screen lg:w-2/3 md:w-1/2 bg-gray-900 rounded-lg overflow-hidden sm:mr-10 flex items-end justify-start relative">
           <iframe
             width="100%"
             height="100%"
@@ -53,7 +53,7 @@ export default function Contact() {
           data-netlify="true"
           name="contact"
           onSubmit={handleSubmit}
-          className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-2 mt-2 md:mt-0"
+          className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full py-2 mt-4 md:mt-0"
         >
           <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font">
             Hire Me
@@ -62,7 +62,7 @@ export default function Contact() {
             If you would like to contact me, please leave your details below and
             I will get back to you as soon as possible.
           </p>
-          <div className="relative mb-4">
+          <div className="relative mb-4 flex-wrap sm:flex-nowrap">
             <label htmlFor="name" className="leading-7 text-sm text-gray-400">
               Name
             </label>
@@ -111,24 +111,18 @@ export default function Contact() {
           </button>
         </form>
       </div>
-      <div className="w-full bg-gray-800 rounded-lg overflow-hidden sm:mr-10 p-4 flex rounded shadow-md">
-        <div className="bg-gray-800 relative flex flex-wrap py-6 ">
-          <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
-            <h2 className="title-font font-semibold text-white tracking-widest text-xs">
-              EMAIL
-            </h2>
-            <span className="text-indigo-400 leading-relaxed">
-              marranz.agueda@gmail.com
-            </span>
-            <h2 className="title-font font-semibold text-white tracking-widest text-xs mt-4">
-              PHONE
-            </h2>
-            <p className="leading-relaxed">+34 678 44 36 84</p>
-          </div>
+      <div className="w-full bg-gray-800 sm:px-5 py-5 flex rounded shadow-md mx-auto">
+        <div className="w-full flex justify-center sm:justify-start mx-auto sm:container">
+            <a href="https://www.linkedin.com/in/mario-arranz-%C3%A1gueda-48512843/" target="_blank" rel="noreferrer" className="rounded-full p-2 hover:bg-gray-600">
+              <AiFillLinkedin className="text-4xl" />
+            </a>
+            <a href="https://github.com/MarioArranzAgueda" target="_blank" rel="noreferrer" className="rounded-full p-2 hover:bg-gray-600">
+              <AiFillGithub className="text-4xl" />
+            </a>
         </div>
       </div>
-      <Portal isOpen={showModal} handleClose={closeModal}> 
-        lorem 
+      <Portal isOpen={showModal} handleClose={closeModal}>
+        lorem
       </Portal>
     </section>
   );

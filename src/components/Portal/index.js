@@ -5,8 +5,8 @@ import {} from "@heroicons/react/solid";
 
 const Portal = ({ isOpen, handleClose, children }) => {
   const Content = (
-    <div id="portal" className={styles.wrapper}>
-      <div className={styles.card}>
+    <div id="portal" className={`${styles.wrapper}`}>
+      <div className={`${styles.card} bg-gray-800`}>
         <div className={styles.header}>
           <h3>Titulo</h3>
           <svg
