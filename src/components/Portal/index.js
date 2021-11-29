@@ -7,8 +7,8 @@ const Portal = ({ isOpen, handleClose, children }) => {
   const Content = (
     <div id="portal" className={`${styles.wrapper}`}>
       <div className={`${styles.card} bg-gray-800`}>
-        <div className={styles.header}>
-          <h3>Titulo</h3>
+        <div className="flex justify-between mb-4">
+          <h3>Thank you!</h3>
           <svg
             onClick={handleClose}
             xmlns="http://www.w3.org/2000/svg"
@@ -26,6 +26,15 @@ const Portal = ({ isOpen, handleClose, children }) => {
           </svg>
         </div>
         <div>{children}</div>
+        <div className="flex justify-end">
+          <button
+          onClick={handleClose}
+            type="submit"
+            className="text-white bg-indigo-500 border-0 mt-4 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+          >
+            Submit
+          </button>
+        </div>
       </div>
     </div>
   );

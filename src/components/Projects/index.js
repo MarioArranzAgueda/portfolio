@@ -11,9 +11,6 @@ export default function Projects() {
           <h1 className="sm:text-4xl text-3xl font-medium title-font mb-4 text-white">
             Experience
           </h1>
-          <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            I´m working for more than {new Date().getFullYear() - 2015} years
-          </p>
         </div>
         <div className="flex flex-wrap -m-4">
           {projects.map((project) => (
@@ -25,9 +22,10 @@ export default function Projects() {
                   <h2 className="tracking-widest text-sm title-font font-medium text-green-400 mb-1">
                     {project.subtitle}
                   </h2>
-                  <h1 className="title-font text-lg font-medium text-white mb-3">
-                    {project.title}
+                  <h1 className="title-font text-lg font-medium text-white mb-1">
+                    {project.title} 
                   </h1>
+                  <h3 className="title-font text-sm font-medium text-white mb-3">{project.years} years</h3>
                   <p className="leading-relaxed">{project.description}</p>
                 </div>
               </div>

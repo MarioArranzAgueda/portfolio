@@ -1,6 +1,5 @@
 import React from "react";
 import Portal from "../Portal";
-import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 export default function Contact() {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -111,18 +110,8 @@ export default function Contact() {
           </button>
         </form>
       </div>
-      <div className="w-full bg-gray-800 sm:px-5 py-5 flex rounded shadow-md mx-auto">
-        <div className="w-full flex justify-center sm:justify-start mx-auto sm:container">
-            <a href="https://www.linkedin.com/in/mario-arranz-%C3%A1gueda-48512843/" target="_blank" rel="noreferrer" className="rounded-full p-2 hover:bg-gray-600">
-              <AiFillLinkedin className="text-4xl" />
-            </a>
-            <a href="https://github.com/MarioArranzAgueda" target="_blank" rel="noreferrer" className="rounded-full p-2 hover:bg-gray-600">
-              <AiFillGithub className="text-4xl" />
-            </a>
-        </div>
-      </div>
       <Portal isOpen={showModal} handleClose={closeModal}>
-        lorem
+        The data has been sent correctly, thank you very much!
       </Portal>
     </section>
   );
