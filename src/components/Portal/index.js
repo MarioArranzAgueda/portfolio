@@ -1,7 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import * as styles from "./Portal.module.css";
-import {} from "@heroicons/react/solid";
 
 const Portal = ({ isOpen, handleClose, children, title }) => {
   const Content = (
