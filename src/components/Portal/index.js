@@ -3,12 +3,12 @@ import { createPortal } from "react-dom";
 import * as styles from "./Portal.module.css";
 import {} from "@heroicons/react/solid";
 
-const Portal = ({ isOpen, handleClose, children }) => {
+const Portal = ({ isOpen, handleClose, children, title }) => {
   const Content = (
-    <div id="portal" className={`${styles.wrapper}`}>
-      <div className={`${styles.card} bg-gray-800`}>
+    <div id="portal" className={`${styles.wrapper} flex items-center fixed top-0 left-0 justify-center text-white`}>
+      <div className={`${styles.card} bg-gray-800 w-1/2 sm:w-3/4 md:w-1/4 lg:w-1/4`}>
         <div className="flex justify-between mb-4">
-          <h3>Thank you!</h3>
+          <h3 className="text-xl">{title? title : 'Thank you!'}</h3>
           <svg
             onClick={handleClose}
             xmlns="http://www.w3.org/2000/svg"
@@ -25,14 +25,14 @@ const Portal = ({ isOpen, handleClose, children }) => {
             />
           </svg>
         </div>
-        <div>{children}</div>
+        <div className="text-sm">{children}</div>
         <div className="flex justify-end">
           <button
-          onClick={handleClose}
+            onClick={handleClose}
             type="submit"
             className="text-white bg-indigo-500 border-0 mt-4 py-1 px-3 focus:outline-none hover:bg-indigo-600 rounded text-lg"
           >
-            Submit
+            Close
           </button>
         </div>
       </div>

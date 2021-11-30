@@ -1,16 +1,53 @@
-import React from "react";
+import React, { useReducer } from "react";
 import Portal from "../Portal";
+
+const states = {
+  NAME: "name",
+  EMAIL: "email",
+  MESSAGE: "message",
+  INIT: "init"
+};
+const initialState = {
+  name: "",
+  email: "",
+  message: "",
+}
+
+function reducer(state, action) {
+  switch (action.type) {
+    case states.NAME:
+      return {
+        ...state,
+        name: action.name,
+      };
+    case states.EMAIL:
+      return {
+        ...state,
+        email: action.email,
+      };
+    case states.MESSAGE:
+      return {
+        ...state,
+        message: action.message,
+      };
+    case states.INIT:
+      return initialState
+    default:
+      throw new Error('You dont have spicified any state')
+  }
+}
+
 export default function Contact() {
-  const [name, setName] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [message, setMessage] = React.useState("");
+  const [state, dispatch] = useReducer(reducer, initialState);
+
   const [showModal, setShowModal] = React.useState(false);
+  const [showErrorModal, setShowErrorModal] = React.useState(false);
 
   const closeModal = () => {
-    setName("");
-    setEmail("");
-    setMessage("");
     setShowModal(false);
+  };
+  const closeErrorModal = () => {
+    setShowErrorModal(false);
   };
 
   function encode(data) {
@@ -23,12 +60,20 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", name, email, message }),
+      body: encode({ "form-name": "contact", ...state }),
     })
-      .then(() => setShowModal(true))
+      .then(response => {
+        if(response.status === 200) {
+          setShowModal(true);
+          dispatch({type: states.INIT})
+        } else {
+          setShowErrorModal(true);
+        }
+      })
       .catch((error) => alert(error));
   }
 
@@ -68,10 +113,12 @@ export default function Contact() {
             <input
               type="text"
               id="name"
+              value={state.name}
               name="name"
-              value={name}
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) =>
+                dispatch({ type: states.NAME, name: e.target.value })
+              }
             />
           </div>
           <div className="relative mb-4">
@@ -81,10 +128,12 @@ export default function Contact() {
             <input
               type="email"
               id="email"
+              value={state.email}
               name="email"
-              value={email}
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) =>
+                dispatch({ type: states.EMAIL, email: e.target.value })
+              }
             />
           </div>
           <div className="relative mb-4">
@@ -97,14 +146,17 @@ export default function Contact() {
             <textarea
               id="message"
               name="message"
-              value={message}
+              value={state.message}
               className="w-full bg-gray-800 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e) =>
+                dispatch({ type: states.MESSAGE, message: e.target.value })
+              }
             />
           </div>
           <button
+            disabled={!state.name || !state.message || !state.email}
             type="submit"
-            className="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+            className="text-white rounded text-lg bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 disabled:opacity-30 bg-indigo-500 cursor-not-allowed"
           >
             Submit
           </button>
@@ -112,6 +164,9 @@ export default function Contact() {
       </div>
       <Portal isOpen={showModal} handleClose={closeModal}>
         The data has been sent correctly, thank you very much!
+      </Portal>
+      <Portal title="Error" isOpen={showErrorModal} handleClose={closeErrorModal}>
+        There has been a problem!
       </Portal>
     </section>
   );
