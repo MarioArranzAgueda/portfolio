@@ -17,7 +17,7 @@ export default function Projects() {
             <div
             key={project.title}
               className="sm:w-1/2 w-100 p-4 z-0">
-              <div className="flex">
+              <div className="flex h-full">
                 <div className="px-8 min-h-full py-5 z-10 w-full border-4 border-gray-800 bg-gray-900">
                   <h2 className="tracking-widest text-sm title-font font-medium text-green-400 mb-1">
                     {project.subtitle}
