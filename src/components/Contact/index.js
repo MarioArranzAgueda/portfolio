@@ -33,7 +33,7 @@ function reducer(state, action) {
     case states.INIT:
       return initialState
     default:
-      throw new Error('You dont have spicified any state')
+      throw new Error('You dont have specified any state')
   }
 }
 
