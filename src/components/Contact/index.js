@@ -100,7 +100,7 @@ export default function Contact() {
           className="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full py-2 mt-4 md:mt-0"
         >
           <h2 className="text-white sm:text-4xl text-3xl mb-1 font-medium title-font">
-            Hire Me
+            Contact me
           </h2>
           <p className="leading-relaxed mb-5">
             If you would like to contact me, please leave your details below and
