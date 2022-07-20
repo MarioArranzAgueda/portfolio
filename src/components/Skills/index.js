@@ -12,7 +12,7 @@ export default function Skills() {
             Skills &amp; Technologies
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
-            I am a JavaScript lover. I always try to know everything around the JavaScript language like libraries, frameworks, tools and best practises.
+            I'm a JavaScript lover. I always try to know everything around the JavaScript language like libraries, frameworks, tools and best practise.
           </p>
         </div>
         <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
