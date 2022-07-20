@@ -1,5 +1,12 @@
 export const projects = [
   {
+    title: "Accedo.tv",
+    subtitle: "ReactJS developer",
+    description:
+      "I develop front-end applications for media streaming clients using technologies such as HTML/CSS, JavaScript, React and Lodash",
+      years: "Present"
+  },
+  {
     title: "GFT Consulting",
     subtitle: "Angular architect",
     description:
@@ -32,6 +39,7 @@ export const skills = [
   "Express",
   "RxJS",
   "TypeScript",
+  "Lodash"
 ];
 
 export const testimonials = [
