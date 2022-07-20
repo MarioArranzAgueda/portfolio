@@ -9,7 +9,7 @@ export default function About() {
             Hi, I'm Mario Arranz.
           </h1>
           <p className="mb-8 leading-relaxed">
-            I´m an Senior Front-end developer with high experiencie in building applications and architectures especially with latest versions of Angular.
+            I'm a Front end developer with strong experience in Angular and React framework. Always willing to work with different technologies like React, NodeJS or any JavaScript library and be ready for new challenges. A lover and enthusiast of clean code.
           </p>
           <div className="flex justify-center">
             <a
