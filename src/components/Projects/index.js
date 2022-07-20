@@ -25,7 +25,7 @@ export default function Projects() {
                   <h1 className="title-font text-lg font-medium text-white mb-1">
                     {project.title} 
                   </h1>
-                  <h3 className="title-font text-sm font-medium text-white mb-3">{project.years} years</h3>
+                  <h3 className="title-font text-sm font-medium text-white mb-3">{project.years}</h3>
                   <p className="leading-relaxed">{project.description}</p>
                 </div>
               </div>
