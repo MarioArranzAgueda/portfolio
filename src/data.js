@@ -42,11 +42,3 @@ export const skills = [
   "Lodash"
 ];
 
-export const testimonials = [
-  {
-    quote: "",
-    image: "",
-    name: "",
-    company: "",
-  },
-];
