@@ -3,7 +3,7 @@ export const projects = [
     title: "Accedo.tv",
     subtitle: "ReactJS developer",
     description:
-      "I develop front-end applications for media streaming clients using technologies such as HTML/CSS, JavaScript, React and Lodash",
+      "I develop front-end applications for media streaming clients using technologies such as HTML/CSS, JavaScript, React, Redux and Lodash",
       years: "Present"
   },
   {
@@ -39,6 +39,9 @@ export const skills = [
   "Express",
   "RxJS",
   "TypeScript",
-  "Lodash"
+  "Lodash",
+  "Redux",
+  "Accessibility",
+  "SaSS"
 ];
 
