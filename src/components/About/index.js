@@ -28,7 +28,7 @@ export default function About() {
           <img
             className="object-cover object-center rounded-full"
             alt="hero"
-            src="https://media-exp2.licdn.com/dms/image/C5603AQGxNyzV4gWlFw/profile-displayphoto-shrink_800_800/0/1516991741431?e=1663804800&v=beta&t=B3mZyPR9Ry6SAB8XTsq42nU84gjdyoWRi7SxDiTyQi4"
+            src="https://media.licdn.com/dms/image/v2/D4E03AQF6bOdvI7F1cQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1690280519347?e=1748476800&v=beta&t=3Q85G-h-5CoCmClf1Mt1wh1s_RidhcypoCTxQIGA6G4"
           />
         </div>
       </div>
